@@ -1,0 +1,120 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Container for the progress bar and buttons */
+.container {
+    background: #1c1c1c;
+    padding: 30px 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    position: relative;
+    width: 90%;
+    max-width: 600px;
+}
+
+/* Progress bar container */
+.progress-container {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+/* Background bar */
+.progress-bar-back {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background-color: #555;
+    width: 100%;
+    transform: translateY(-50%);
+    z-index: 1;
+    border: none;
+}
+
+/* Front progress fill */
+.progress-bar-front {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #00c9ff, #92fe9d);
+    width: 0;
+    transform: translateY(-50%);
+    z-index: 2;
+    border: none;
+    transition: width 0.3s ease-in-out;
+}
+
+/* Individual steps */
+.step {
+    background-color: #333;
+    color: #aaa;
+    border: 3px solid #555;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.step.checked {
+    background: linear-gradient(135deg, #00c9ff, #92fe9d);
+    color: #fff;
+    border-color: #00c9ff;
+    box-shadow: 0 0 10px rgba(0, 201, 255, 0.6);
+}
+
+.step small {
+    position: absolute;
+    top: 60px;
+    width: 70px;
+    text-align: center;
+    font-size: 13px;
+    color: #ddd;
+}
+
+/* Navigation buttons */
+.btn {
+    background: linear-gradient(to right, #00c9ff, #92fe9d);
+    border: none;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    margin: 0 10px;
+    
+}
+
+.btn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(0, 201, 255, 0.5);
+}
+
+/* Button positioning */
+#prev, #next {
+    position: relative;
+   
+}
